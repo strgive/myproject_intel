@@ -1,0 +1,141 @@
+//1、引入 bootstrap.less文件
+@import "bootstrap.less";
+//2、编写自定义的css样式
+
+body{
+  font-family:"SimHei","Simsun",arial,sans-serif;
+  padding-top:60px;
+}
+
+#nav{
+  //1、#nav 中的 navbar-brand
+  a.navbar-brand{
+    /*宽度，高度，背景*/
+    width:63px;
+    height:42px;
+    background:url(../img/hdr-spr.png) no-repeat 0 -512px;
+    margin-top:2px;
+  }
+  //2、#nav 中的 a.dorpdown-toggle 菜单 的样式
+  a.dropdown-toggle{
+    display:inline-block;
+    /*背景颜色，高度，左右padding*/
+    background:#0081D6;
+    height:50px;
+    padding:0 60px 0 20px;
+    /*文本颜色，取消下划线，加粗，行高*/
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    line-height:50px;
+  }
+  //3、修改登录下拉菜单的样式
+  div.panel{
+    width:400px;
+    padding:10px;
+    color:#333;
+  }
+}
+#main{
+  //1、.img-title
+  div.img-title{
+    position:absolute;
+    bottom:20px;
+    left:30px;
+    width:90%;
+  }
+  //在手机屏幕中 样式的处理(响应式)
+  @media screen and (max-width:767px){
+    div.img-title{
+      position:static;
+      width:100%;
+    }
+  }
+
+  div.media{
+    background:#0071C5;
+    margin-top:10px;
+    padding:32px 30px;
+  }
+  //在 PAD 中调整 div.media 的内边距，外边距
+  @media screen and (min-width:768px) and (max-width:991px){
+
+    div.media{
+      margin-top:0;
+      padding:42px 30px;
+    }
+
+    div.col-md-4.col-xs-12{
+      margin-top:10px;
+    }
+
+  }
+
+  //在PHONE中 设置 小图像的宽度为 100%
+  @media screen and (max-width:767px){
+    div.col-md-12.col-sm-6.col-xs-12>img{
+      width:100%
+    }
+
+    div.col-md-12.col-sm-6.col-xs-12{
+      margin-top:15px;
+    }
+  }
+
+  //遮罩层
+  div.half-mask{
+    /*高度，背景色(半透明)，绝对定位*/
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    position:absolute;
+    left:15px;
+    top:79%;
+    /*宽度*/
+    width:90.5%;
+    /*过渡效果*/
+    transition:top 0.3s;
+  }
+
+  /*将 div.half-mask 的父元素 设置为 溢出隐藏*/
+  div.col-md-12.col-sm-6.col-xs-12{
+    overflow:hidden;
+  }
+
+  /*鼠标移入到 div.half-mask 上时，将 top 值改为 0%*/
+  div.half-mask:hover{
+    top:0%;
+  }
+
+
+  /*通过响应式 调整 div.half-mask 的宽度(PAD)*/
+  @media screen and (min-width:768px) and (max-width:991px){
+    div.half-mask{
+      width:92%;
+    }
+  }
+
+  /*通过响应式 调整 div.half-mask 的宽度(PHOHE)*/
+  @media screen and (max-width:767px){
+    div.half-mask{
+      width:92.7%;
+    }
+  }
+}
+#footer{
+  background:#f3f3f3;
+  color:#333;
+
+  h4{
+    color:#333;
+  }
+  a{
+    color:#578DD3;
+  }
+}
+
+
+
+
+
+
+
